@@ -1,0 +1,35 @@
+<html>
+<script>
+function fun()
+{
+   var a=f1.t2.value;
+  var b=f1.t3.value;
+ 
+   if(a=="")
+   {
+   alert("username should not be empty");
+   f1.t2.focus();
+   }
+else if(b=="")
+{
+alert("password should not be empty");
+ f1.t3.focus();
+}
+else
+ {
+alert("data submited successfully");
+f1.submit();
+   }
+}
+
+</script>
+<body>
+<form name=f1 action=second>
+<table>
+<tr><td>User Name<td><input type="text" name=t2 size=20></tr>
+<tr><td>Password<td><input type=password name=t3 size=20></tr>
+<tr><td><input type=button value=submit onClick='fun()'></tr>
+</table>
+</form>
+</body>
+</html>
