@@ -1,0 +1,37 @@
+<html>
+<script>
+
+
+function cost()
+{
+
+var a=f1.t2.value;
+var b=f1.t3.value;
+
+
+
+document.write("item cost---"+(a*b));
+
+}
+
+</script>
+<body bgcolor=" #c2c2a3">
+
+<center>
+<h1>Customer's Bill</h1>
+
+<form name=f1>
+<table border=2>
+<tr><td>Enter your choice:<td><select name="t1"><option>select</option><option>sugar</option><option>salt</option><option>Tea powder</option><option>milk</option></tr></select><br><br>
+<tr><td>Enter the quantity you want:<td><input type=text name=t2 size=20><td></tr>
+<tr><td>Enter price:<td><input type=text name=t3 size=20><td></tr>
+<tr><td><td><input type="button" name=t4  value="Click to display cost" onclick="cost()"></tr>
+</table>
+</center>
+</form>
+
+</body>
+
+
+
+</html>
