@@ -36,3 +36,45 @@ First s6=new Second(102,"madhu",78,89,89);
 }
 
 }
+
+-------------------------------------------------------------------------------------------------------
+package legato;
+abstract class abs
+{
+	abstract void display();
+	abstract void display1();
+	void display2()
+	{
+		System.out.println("x");
+	}
+	abstract void display4();
+}
+class add extends abs
+{
+	void display()
+	{
+		System.out.println("abstract display");;
+	}
+	void display1()
+	{
+		System.out.println("abstract display1");;
+	}
+	void display4()
+	{
+		System.out.println("abstract display4");;
+	}
+}
+public class Overriding {
+	public static void main(String[] args) {
+		
+	
+	
+	add ob=new add();
+	ob.display();
+	ob.display1();
+	ob.display4();
+	
+	
+	
+	}
+}
