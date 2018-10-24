@@ -1,0 +1,50 @@
+package legato;
+
+public class Rectacngle {
+	
+		private double height;
+		private double width;
+		double area;
+		public double getHeight() {
+			return height;
+		}
+		public void setHeight(double height) {
+			this.height = height;
+		}
+		public double getWidth() {
+			return width;
+		}
+		public void setWidth(double width) {
+			this.width = width;
+		}
+		public Rectacngle(double height, double width) {
+			super();
+			this.height = height;
+			this.width = width;
+			area=height*width;
+			System.out.println(area);
+			
+		}
+		@Override
+		public String toString() {
+			return "Rectacngle [height=" + height + ", width=" + width + ",area"+area+"]";
+		}
+		
+	
+		
+	
+
+}
+
+
+
+package legato;
+
+import java.awt.Rectangle;
+
+public class TestRectangle extends Rectangle {
+public static void main(String[] args) {
+	Rectangle r=new Rectangle(12,20);
+	System.out.println(r);
+}
+}
