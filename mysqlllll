@@ -1,0 +1,93 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+public class Legato extends HttpServlet {
+	  @RequestMapping("/mysql")  
+	    public ModelAndView Legato(HttpServletRequest req,HttpServletResponse res) {  
+	    	try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection c2=DriverManager.getConnection("jdbc:mysql://localhost:3307/legato","root","tiger");
+			PreparedStatement p=c2.prepareStatement("insert into employee values(?,?,?)");
+			p.setString(1, "t1");
+			p.setString(2, "t2");
+			p.setString(3,"t3");
+			p.execute();
+			res.sendRedirect("mysql.html");
+			} s
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+	    }  
+
+	public void destroy() {
+	System.out.println("destroy servlet");	
+	}
+
+	
+	}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+mysql.html
+___________
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="blue">
+<form action="MySql" method="get">
+<input type="text" name="t1" placeholder="Your name"><br><br>
+<input type="text" name="t2" placeholder="Your Email"><br><br>
+<textarea rows="5" cols="10" name="t3" placeholder="meassage"></textarea><br><br>
+<button>Submit</button>
+<button>Ubdate</button>
+<button>Delete</button>
+</form>
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------
+spring-sevlet.xml
+--------------
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+http://www.springframework.org/schema/context  
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">  
+
+	<context:component-scan base-package="Legato"></context:component-scan>
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF//"></property>
+	<property name="suffix" value=".html"></property>
+	</bean>
+	
+	</beans>
+  ---------------------------------------------------------------------------------------------------------------------------------
+  web.xml-
+  ---------
+  <?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.0">
+  <servlet>
+  <servlet-name>spring</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>spring</servlet-name>
+  <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
+</web-app>
