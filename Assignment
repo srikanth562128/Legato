@@ -1,0 +1,58 @@
+1)A)The Spring IoC container makes use of Java POJO classes and configuration metadata to produce a fully configured and executable system or application.
+Their of two types of spring containers:
+1)BeanFactory Container
+2)ApplicationContext Container
+-------------------------------------------------------------------------------------------
+2)A)Spring MVC is mostly used with Spring for any web application development. It is very powerful and nice layered architecture for flow and configuration.
+MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate application's concerns.
+Model - Model represents an object or JAVA POJO carrying data. It can also have logic to update controller if its data changes.
+
+View - View represents the visualization of the data that model contains.
+
+Controller - Controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.
+-----------------------------------------------------------------------------------------
+3)A)Spring test:
+        --------------
+		Spring Boot provides a @SpringBootTest annotation, which can be used as an alternative to the standard spring-test @ContextConfiguration annotation when you need Spring Boot features. The annotation works by creating the ApplicationContext used in your tests through SpringApplication .
+Spring Security:
+-------------------
+	Spring Security is one of the Spring Framework's Security modules. It is a Java SE/Java EE Security Framework to provide Authentication, Authorization, SSO and other Security features for Web Applications or Enterprise Applications.
+--------------------------------------------------------------------------------------
+4)A)
+ 	Soap			     		Restful
+1)A xml-based message protocol			1)An Architecturestyle protocol
+2)Used WSDL for communication between		2)Uses xml and json to send and recieve data 
+ customer and provider
+3)Invokes service by calling RPC method		3)Simply calls service via URL call
+4)Does not return human readable result		4)result is in the form of xml or json
+5)Tranfer is over Http protocol and aslo		5)Result is over Http protocol only.
+uses Smtp,Ftp,etc
+-------------------------------------------------------------------------------------------------------------
+5)A)program
+
+package com.java;
+
+public class Test {
+	public int square(int a)
+	{
+		return a*a;
+	}
+	public int cube(int a)
+	{
+		return a*a*a;
+	}
+	public void prime(int a)
+	{
+		for(int i=0;i<=a;i++)
+		{
+			if(a%i==0)
+			{
+				System.out.println("the given nuber is not a prime number");
+			}
+			
+		}
+		System.out.println("the given nuber is prime");	
+		}
+
+}
+------------------------------------------------------
